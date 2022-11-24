@@ -1,0 +1,93 @@
+body{
+    background-color: hsla(0, 0%, 10%);
+}
+
+div.text{
+    color: whitesmoke;
+}
+
+.green{
+    color: green;
+}
+
+.yellow{
+    color: goldenrod;
+}
+
+.gray{
+    color: lightslategray;
+}
+
+div.title{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    font-size: 150%;
+    font-weight: bold;
+}
+
+div.title h1{
+    border-bottom: 1px solid whitesmoke;
+}
+
+div.select{
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    width: 300px;
+    margin-left: -175px;
+
+    font-size: 130%;
+}
+
+div.select h1{
+    text-align: center;
+    width: 300px;
+    margin-left: 25px;
+}
+
+input[type="easy"], input[type="intermediate"], input[type="hard"]{
+    margin: 20px auto;
+    display: inline-block;
+    text-align: center;
+    background: hsla(0, 0%, 10%);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px;
+    border: solid;
+    border-radius: 4px;
+    border-top-color:whitesmoke;
+    border-right-color: whitesmoke;
+    border-bottom-color: whitesmoke;
+    border-left-color: whitesmoke;
+
+    font-size: 125%;
+}
+
+input[type="easy"]{
+    color: greenyellow;
+}
+
+input[type="intermediate"]{
+    color: goldenrod;
+}
+
+input[type="hard"]{
+    color: crimson;
+}
+
+div.instructions{
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    width: 700px;
+    margin-left: -350px;
+
+    font-size: 130%;
+}
+
+div.instructions h1{
+    text-align: center;
+}
+
