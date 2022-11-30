@@ -1,3 +1,17 @@
+
+// database
+const firebaseConfig = {
+  apiKey: "AIzaSyDRp5vSHRwd70JFP7XBZFj9oxrR0IkgR4Y",
+  authDomain: "finalproject-de8ef.firebaseapp.com",
+  projectId: "finalproject-de8ef",
+  storageBucket: "finalproject-de8ef.appspot.com",
+  messagingSenderId: "733526193590",
+  appId: "1:733526193590:web:b4659c1d10342cbdac7d17",
+  measurementId: "G-DP4C3ERET1"
+};
+
+firebaseConfig.initializeApp(firebaseConfig);
+
 document.addEventListener("DOMContentLoaded", () => {
     createSquares();
     getNewWord();
@@ -160,4 +174,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  
+

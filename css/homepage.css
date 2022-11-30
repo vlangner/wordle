@@ -47,7 +47,7 @@ div.select h1{
     margin-left: 25px;
 }
 
-input[type="easy"], input[type="intermediate"], input[type="hard"]{
+div.easy, div.intermediate, div.hard{
     margin: 20px auto;
     display: inline-block;
     text-align: center;
@@ -55,6 +55,7 @@ input[type="easy"], input[type="intermediate"], input[type="hard"]{
     text-transform: uppercase;
     text-decoration: none;
     padding: 16px;
+    width: 300px;
     border: solid;
     border-radius: 4px;
     border-top-color:whitesmoke;
@@ -65,15 +66,15 @@ input[type="easy"], input[type="intermediate"], input[type="hard"]{
     font-size: 125%;
 }
 
-input[type="easy"]{
+div.easy a{
     color: greenyellow;
 }
 
-input[type="intermediate"]{
+div.intermediate a{
     color: goldenrod;
 }
 
-input[type="hard"]{
+div.hard a{
     color: crimson;
 }
 
