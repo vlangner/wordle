@@ -1,35 +1,20 @@
-document.addEventListener("DOMContentLoaded", () => {
-    createSquares();
-    getNewWord();
-  
-    let guessedWords = [[]];
-    let availableSpace = 1;
-  
-    let word;
-    let guessedWordCount = 0;
-  
-    const keys = document.querySelectorAll(".keyboard-row button");
-  
-    function getNewWord() {
-      fetch(
-        `https://wordsapiv1.p.rapidapi.com/words/?random=true&lettersMin=5&lettersMax=5`,
-        {
-          method: "GET",
-          headers: {
-            "x-rapidapi-host": "wordsapiv1.p.rapidapi.com",
-            "x-rapidapi-key": "<YOUR_KEY_GOES_HERE>",
-          },
-        }
-      )
-        .then((response) => {
-          return response.json();
-        })
-        .then((res) => {
-          word = res.word;
-        })
-        .catch((err) => {
-          console.error(err);
-        });
+const dictionary = ['hollow', 'waters', 'signal'];
+const state = {
+  secret: dictionary[Math.floor(Math.random() * dictionary.length)],
+  grid: Array(6)
+    .fill()
+    .map(() => Array(5).fill('')),
+  currentRow: 0,
+  currentCol: 0,
+};
+
+function drawGrid(container) {
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+
+  for (let i = 0; i < 6; i++) {
+    for (let j = 0; j < 5; j++) {
+      drawBox(grid, i, j);
     }
   }
 
@@ -113,7 +98,7 @@ function revealWord(guess) {
   const row = state.currentRow;
   const animation_duration = 500; // ms
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 6; i++) {
     const box = document.getElementById(`box${row}${i}`);
     const letter = box.textContent;
     const numOfOccurrencesSecret = getNumOfOccurrencesInWord(
@@ -141,7 +126,7 @@ function revealWord(guess) {
     }, ((i + 1) * animation_duration) / 2);
 
     box.classList.add('animated');
-    box.style.animationDelay = `${(i * animation_duration) / 2}ms`;
+    box.style.animationDelay = `${(i * animation_duration) / 3}ms`;
   }
 
   const isWinner = state.secret === guess;
@@ -153,24 +138,33 @@ function revealWord(guess) {
     } else if (isGameOver) {
       alert(`Good try! The word was ${state.secret}.`);
     }
-  
-    for (let i = 0; i < keys.length; i++) {
-      keys[i].onclick = ({ target }) => {
-        const letter = target.getAttribute("data-key");
-  
-        if (letter === "enter") {
-          handleSubmitWord();
-          return;
-        }
-  
-        if (letter === "del") {
-          handleDeleteLetter();
-          return;
-        }
-  
-        updateGuessedWords(letter);
-      };
-    }
-  });
+  }, 3 * animation_duration);
+}
 
+function isLetter(key) {
+  return key.length === 1 && key.match(/[a-z]/i);
+}
+
+function addLetter(letter) {
+  if (state.currentCol === 6) return;
+  state.grid[state.currentRow][state.currentCol] = letter;
+  state.currentCol++;
+}
+
+function removeLetter() {
+  if (state.currentCol === 0) return;
+  state.grid[state.currentRow][state.currentCol - 1] = '';
+  state.currentCol--;
+}
+
+function startup() {
+  const game = document.getElementById('game');
+  drawGrid(game);
+
+  registerKeyboardEvents();
+
+  console.log(state.secret);
+}
+
+startup();
   
