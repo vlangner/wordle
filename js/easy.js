@@ -1,14 +1,9 @@
-//import { testDictionary, realDictionary } from './dictionary.js';
-
-// for testing purposes, make sure to use the test dictionary
-//console.log('test dictionary:', testDictionary);
-
-const dictionary = ['earth', 'boats', 'games'];
+const dictionary = ['boot', 'cars', 'loop'];
 const state = {
   secret: dictionary[Math.floor(Math.random() * dictionary.length)],
-  grid: Array(6)
+  grid: Array(7)
     .fill()
-    .map(() => Array(5).fill('')),
+    .map(() => Array(4).fill('')),
   currentRow: 0,
   currentCol: 0,
 };
@@ -17,8 +12,8 @@ function drawGrid(container) {
   const grid = document.createElement('div');
   grid.className = 'grid';
 
-  for (let i = 0; i < 6; i++) {
-    for (let j = 0; j < 5; j++) {
+  for (let i = 0; i < 7; i++) {
+    for (let j = 0; j < 4; j++) {
       drawBox(grid, i, j);
     }
   }
@@ -49,7 +44,7 @@ function registerKeyboardEvents() {
   document.body.onkeydown = (e) => {
     const key = e.key;
     if (key === 'Enter') {
-      if (state.currentCol === 5) {
+      if (state.currentCol === 4) {
         const word = getCurrentWord();
         if (isWordValid(word)) {
           revealWord(word);
@@ -103,7 +98,7 @@ function revealWord(guess) {
   const row = state.currentRow;
   const animation_duration = 500; // ms
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 4; i++) {
     const box = document.getElementById(`box${row}${i}`);
     const letter = box.textContent;
     const numOfOccurrencesSecret = getNumOfOccurrencesInWord(
@@ -135,7 +130,7 @@ function revealWord(guess) {
   }
 
   const isWinner = state.secret === guess;
-  const isGameOver = state.currentRow === 5;
+  const isGameOver = state.currentRow === 6;
 
   setTimeout(() => {
     if (isWinner) {
@@ -151,7 +146,7 @@ function isLetter(key) {
 }
 
 function addLetter(letter) {
-  if (state.currentCol === 5) return;
+  if (state.currentCol === 4) return;
   state.grid[state.currentRow][state.currentCol] = letter;
   state.currentCol++;
 }
