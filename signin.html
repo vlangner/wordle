@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="css/signin.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+    <div class="signUp">
+        <form id="newUser">
+            <h1>Sign Up</h1>
+            <p>Email Address:</p>
+            <p>
+                <input
+                    id="email" 
+                    type="text"
+                    autocomplete="off"
+                    value=""
+                    name="email"
+                    required
+                />
+            </p>
+
+            <p>Password:</p>
+            <p>
+                <input
+                    id="password"
+                    type="text"
+                    autocomplete="off"
+                    value=""
+                    name="password"
+                    maxlength="15"
+                    required
+                />
+            </p>
+
+            <p class="signUpButton">
+                <input type="submit" id="signup" value="Sign Up">
+            </p>
+        </form>
+    </div>
+
+    <div class="signIn">
+        <form id="login">
+            <h1>Sign In</h1>
+            <p>
+                <p>Username (Email Address):</p>
+                <input type="text" name="username2" id="username2">
+            </p>
+
+            <p>
+                <p>Password:</p>
+                <input type="text" name="password2" id="password2">
+            </p>
+
+
+            <p class="signInButton">
+                <input type="submit" id="signin" value="Sign In">
+            </p>
+            
+            <p id="or">OR</p>
+            
+            <p>
+                <input type="submit" id="google" value="Sign in With Google">
+            </p>
+        </form>
+    </div>
+
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+
+    <script src="js/signin.js"></script>
+</body>

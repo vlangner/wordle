@@ -1,0 +1,52 @@
+body{
+    background-color: hsla(120, 0%, 7%, 1)
+}
+
+div.signUp{
+    color: whitesmoke;
+    position: absolute;
+    left: 30%;
+    top: 10%;
+
+    font-size: 175%;
+}
+
+div.signIn{
+    color: whitesmoke;
+    position: absolute;
+    right: 30%;
+    top: 10%;
+
+    font-size: 175%;
+}
+
+input[id="email"], input[id="username"], input[id="password"]{
+    background-color: whitesmoke;
+    
+    padding: 16px;
+    min-width: 100%;
+    border-radius: 3px;
+    font-size: 1.15rem
+}
+
+input[id="username2"], input[id="password2"]{
+    background-color: whitesmoke;
+
+    padding: 16px;
+    min-width: 100%;
+    border-radius: 3px;
+    font-size: 1.15rem;
+}
+
+input[type="submit"]{
+    justify-content: center;
+    margin-left: 20px;
+
+    background-color: dimgray;
+    color: whitesmoke;
+
+    padding: 16px;
+    min-width: 100%;
+    border-radius: 3px;
+    font-size: 1.15rem;
+}
