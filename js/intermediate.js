@@ -1,4 +1,4 @@
-const dictionary = ['hollow', 'waters', 'signal'];
+const dictionary = ['water'];
 const state = {
   secret: dictionary[Math.floor(Math.random() * dictionary.length)],
   grid: Array(6)
@@ -96,9 +96,9 @@ function getPositionOfOccurrence(word, letter, position) {
 
 function revealWord(guess) {
   const row = state.currentRow;
-  const animation_duration = 500; // ms
+  const animation_duration = 500; 
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 5; i++) {
     const box = document.getElementById(`box${row}${i}`);
     const letter = box.textContent;
     const numOfOccurrencesSecret = getNumOfOccurrencesInWord(
@@ -146,7 +146,7 @@ function isLetter(key) {
 }
 
 function addLetter(letter) {
-  if (state.currentCol === 6) return;
+  if (state.currentCol === 5) return;
   state.grid[state.currentRow][state.currentCol] = letter;
   state.currentCol++;
 }
@@ -167,4 +167,3 @@ function startup() {
 }
 
 startup();
-  
