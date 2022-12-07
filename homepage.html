@@ -4,9 +4,16 @@
     <title>Wordle - Final Project</title>
     
     <link rel="stylesheet" href="css/homepage.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
+    <div class="signout">
+        <input type="submit" name="signoutButton" id="signoutButton" value="Sign Out">
+    </div>
+
     <div class="text">
         <div class="title">
             <h1>WORDLE - FINAL PROJECT</h1>
@@ -31,12 +38,29 @@
         <div class="instructions">
             <h1>INSTRUCTIONS</h1> 
             <ul>
-                <li>Guess the word in a certain amount of tries.</li>
+                <li>Guess the word in a certain amount of tries, based off of the difficulty you choose.</li>
                 <li>Each guess must be a valid word.</li>
-                <li>If the letter turns <span class="green">GREEN</span>, that letter is in the word and in the correct location.</li>
-                <li>If the letter turns <span class="yellow">YELLOW</span>, that letter is in the word but in the wrong location.</li>
-                <li>If the letter turns <span class="gray">GRAY</span>, that letter is not in the word.</li>
+                <li>If the letter turns <span style="color:green">GREEN</span>, that letter is in the word and in the correct location.</li>
+                <li>If the letter turns <span style="color:goldenrod">YELLOW</span>, that letter is in the word but in the wrong location.</li>
+                <li>If the letter turns <span style="color:darkgrey">GRAY</span>, that letter is not in the word.</li>
             </ul>
         </div>
+
+        <div id="sample">
+            <div class="grid">
+                <div class="box close">T</div>
+                <div class="box correct">H</div>
+                <div class="box empty">E</div>
+                <div class="box empty">I</div>
+                <div class="box close">R</div>
+            </div>
+        </div>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+
+    <script src="js/homepage.js"></script>
 </body>

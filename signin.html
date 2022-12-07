@@ -3,12 +3,17 @@
 <head>
     <link rel="stylesheet" href="css/signin.css">
 
+    <title>Sign In - Wordle</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
-    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
     </script>
 </head>
 
 <body>
+    <div class="title">
+        <h1>Worlde - Final Project</h1>
+    </div>  
+    
     <div class="signUp">
         <form id="newUser">
             <h1>Sign Up</h1>
@@ -45,7 +50,7 @@
 
     <div class="signIn">
         <form id="login">
-            <h1>Sign In</h1>
+            <h1>Login</h1>
             <p>
                 <p>Username (Email Address):</p>
                 <input type="text" name="username2" id="username2">
@@ -58,21 +63,12 @@
 
 
             <p class="signInButton">
-                <input type="submit" id="signin" value="Sign In">
+                <input type="submit" id="signin" value="Login">
             </p>
-            
-            <p id="or">OR</p>
-            
-            <p>
-                <input type="submit" id="google" value="Sign in With Google">
-            </p>
-        </form>
-    </div>
 
 	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
-
 	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
 
     <script src="js/signin.js"></script>

@@ -43,17 +43,3 @@ $('#login').submit(function (e) {
         console.log(errorMessage);
     });
 });
-
-$('#google').click(function () {
-    const provider = new firebase.auth.GoogleAuthProvider();
-
-    firebase.auth().signInWithPopup(provider).then((result) => {
-        const user = result.user;
-        console.log("Google user: " + user.email);
-        window.location.href = "homepage.html";
-    }).catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log("Error message: " + errorMessage);
-    });
-});
