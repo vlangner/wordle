@@ -12,6 +12,11 @@ div.title{
     font-weight: bold;
 }
 
+div.title p {
+    position: absolute;
+    top: 10%
+}
+
 div.signUp{
     color: whitesmoke;
     position: absolute;
